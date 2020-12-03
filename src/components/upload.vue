@@ -178,8 +178,8 @@ export default defineComponent({
     });
 
     onUnmounted(() => {
-      window.removeEventListener("online", HandleOnline);
-      window.removeEventListener("offline", HandleOffline);
+      window.removeEventListener("online", HandleOnline, false);
+      window.removeEventListener("offline", HandleOffline, false);
     });
 
     let { progress, isOnline, url, suffix } = toRefs(state);
